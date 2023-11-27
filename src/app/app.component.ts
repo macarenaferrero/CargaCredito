@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
-}
+  constructor(public router: Router)
+  {
+    this.router.navigateByUrl("/splash");
+  }
+  ionViewDidEnter(){
+    SplashScreen.hide();
+    }}

@@ -1,0 +1,71 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+
+
+    <ion-title class="ion-text-center fs pt-2 mt-2" style="color: white;">{{this.miCredito.cantidad}}
+      CREDITOS</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content  [ngClass]="scanActive?'scanner-activo':''" noscroll>
+
+
+  <ion-row class="scan-button" [hidden]="!scanActive">
+    <ion-col class="ion-no-padding">
+      <button type="button" class="pos3" (click)="stopScanner()">DEJAR DE ESCANEAR</button>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="scanActive === true">
+    <div class="keke2">
+      <div class="scan-box" [hidden]="!scanActive"></div>
+    </div>
+  </div>
+
+  <div class="ion-text-center scan-box2" [hidden]="scanActive" (click)="startScanner()">
+    <img style="width: 300px;" src="../../../assets/general/qr-maca.png">
+  </div>
+
+
+
+  <button class="pos" size="large" (click)="logOut()">Salir</button>
+  <button class="pos2" size="large" (click)="presentAlertConfirm()">Limpiar</button>
+
+</ion-content> -->
+
+
+<ion-content style="font-family: 'Questrial', sans-serif;" [ngClass]="scanActive?'scanner-activo':''" noscroll>
+  <ion-header>
+    <div class="visor">
+      <h1 class="titulo" *ngIf="!scanActive"> ${{this.miCredito.cantidad}} CREDITOS</h1>
+      <h1 class="titulo" *ngIf="scanActive">ESCANEANDO ...</h1>
+      <p class="monto" [ngClass]="{
+      'scanner-activo-visor': scanActive,
+      'monto-rojo': !scanActive,
+      'monto-amarillo': !scanActive}">
+           <span></span>
+      </p>
+  </div>
+  </ion-header>
+
+  <!-- *************************** VISOR DE SALDO Y BOTON SCANNER *************************** -->
+  <div class="centrado">
+      <button class="escanear" expand="block" type="button" (click)="startScanner()" *ngIf="!scanActive">
+          <h6>ESCANEAR</h6>
+      </button>
+    </div>
+      <!-- <button class="escanear" expand="block" type="button" (click)="stopScanner()" *ngIf="scanActive">
+          <ion-text style="
+        color: #fff;
+        text-shadow: 2px 2px 4px #000;
+        font-size: 1rem;
+        font-family: 'Questrial', sans-serif;;
+      ">CANCELAR <ion-icon name="scan-outline"></ion-icon></ion-text>
+      </button> -->
+      <ion-row class="scan-button" *ngIf="scanActive">
+        <ion-col class="ion-no-padding">
+          <button type="button" class="pos3" (click)="stopScanner()">DEJAR DE ESCANEAR</button>
+        </ion-col>
+      </ion-row>
+
+  <button class="pos" size="large" (click)="logOut()">Salir</button>
+  <button class="pos2" size="large" (click)="presentAlertConfirm()" >Limpiar</button>

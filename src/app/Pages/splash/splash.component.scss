@@ -1,0 +1,25 @@
+@-webkit-keyframes slide-left{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(-100px);transform:translateX(-100px)}}@keyframes slide-left{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(-100px);transform:translateX(-100px)}}
+
+ion-content{
+  background-image: url('../../../assets/general/5.png');
+}
+
+ion-content{
+  --background: none;
+}
+
+.slide-left{-webkit-animation:slide-left 1s linear infinite alternate-reverse forwards;animation:slide-left 1s linear infinite alternate-reverse forwards}
+
+
+.custom-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Opcional para centrar verticalmente */
+}
+
+img{
+  max-width: 150%;
+  padding-left: 80px;
+}
